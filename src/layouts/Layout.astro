@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import img from '../assets/images/image.jpg';
 
 interface Props {
 	title?: string;
@@ -7,14 +8,16 @@ interface Props {
 	canonicalURL?: string;
 	ogImage?: string;
 }
+
 const { 
 	title = "site.title",
 	description = "site.description",
 	canonicalURL = Astro.url.href,
-	ogImage = "/og-image.svg",
+	ogImage = img,
 } = Astro.props
 
-const socialImageURL = new URL(ogImage, Astro.site ?? Astro.url);
+const imagePath = typeof ogImage === 'string' ? ogImage : ogImage.src;
+const socialImageURL = new URL(imagePath, Astro.site ?? Astro.url);
 ---
 
 <!doctype html>
@@ -24,7 +27,7 @@ const socialImageURL = new URL(ogImage, Astro.site ?? Astro.url);
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="../../public/favicon.ico" />
 		<link rel="canonical" href={canonicalURL}>
 
 		<!-- SEO Primario -->
