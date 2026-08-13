@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import img from '../../assets/images/imgHero.png';
+
+---
+<section class="flex flex-col lg:gap-6 gap-3 items-center lg:flex-row px-6" aria-labelledby="hero-title">
+    <div class="lg:w-6/10">
+        <p class="text-[1.3rem] italic">Minimal Form. Maximum Presence.</p>
+        <h1 id="hero-title" class="font-montserrat font-bold text-[3.4rem] leading-14 max-xl:text-6xl max-sm:text-5xl text-accent max-w-160">KROMA STUDIO tu marca de ropa urbana</h1>
+        <p class="text-[1.35rem] max-w-165 mt-2">Enfocados en cortes contemporáneos, prendas unisex, siluetas oversize estructuradas, telas de alto gramaje y una estética visual limpia pero contundente dirigida a jóvenes creadores, desarrolladores, diseñadores y entusiastas de la moda urbana que buscan prendas duraderas, cómodas con estilo y un diseño sobrio pero moderno.</p>
+        <a class="font-montserrat bg-main text-background block w-fit mt-4 px-8 py-3 rounded-2xl md:mt-6 border-4 border-transparent font-bold transition-all duration-300 ease-in-out hover:-translate-y-2 hover:border-main hover:text-main hover:bg-background ml-2 md:ml-6" 
+        href="/">Ver Características</a>
+    </div>
+    <div class="lg:w-4/10 w-full lg:mt-0 mt-10">
+        <Image 
+            class="w-full mx-auto h-auto max-w-xs sm:max-w-sm md:max-w-md max-h-120 rounded-[7rem] scale-115 drop-shadow-[5px_2px_5px_#10192ce8] bg"
+            src={img} 
+            alt="Modelo vistiendo prendas de la colección urbana de la marca KROMA Studio una chaqueta gris con un sueter negro" 
+            width={1100} 
+            height={1220} 
+            draggable="false" 
+            loading="eager"
+        />
+    </div>
+</section>
+
+<style>
+    a {
+        box-shadow: 5.5px 10px 20.0px hsla(218, 40%, 12%, 0.568);
+    }
+</style>

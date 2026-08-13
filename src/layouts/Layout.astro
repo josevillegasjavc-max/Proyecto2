@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
-import img from '../assets/images/image.jpg';
+import img from '../../public/ogImage.png';
+import Header from '../components/Header.astro';
 
 interface Props {
 	title?: string;
@@ -22,12 +23,12 @@ const socialImageURL = new URL(imagePath, Astro.site ?? Astro.url);
 
 <!doctype html>
 <html lang="es" class="scroll-smooth">
-	<head>
+	<head>c:\Users\jose\Pictures\remove.bg\ogImage - copia.png
 		<!-- Metadatos tecnicos basicos -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="../../public/favicon.ico" />
+		<link rel="icon" type="image/png" href="/favicon.png" />		
 		<link rel="canonical" href={canonicalURL}>
 
 		<!-- SEO Primario -->
@@ -50,10 +51,10 @@ const socialImageURL = new URL(imagePath, Astro.site ?? Astro.url);
 		<meta property="twitter:image" content={socialImageURL} />
 	</head>
 
-	<body class="w-full min-h-screen bg-linear-to-b from-[#202020] to-[#2c2c2c] text-indigo-100">
-		<main class="mx-auto max-w-7xl p-10">
+	<body class="flex flex-col bg-background text-main">
+		<Header/>
+		<main class="flex flex-col mx-auto max-w-7xl w-full mt-13 z-0 min-h-120 justify-center">
 			<slot />
 		</main>
 	</body>
-
 </html>
