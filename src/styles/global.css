@@ -11,7 +11,7 @@
 
 /* 4. Variables CSS nativas para tus colores */
 :root {
-    --text-main: #101828;
-    --text-bold: #051230;
-    --background: #dce5ed;
+    --text-main: #18191b;
+    --text-bold: #0b0d13;
+    --background: #f3f5f7;
 }
