@@ -1,13 +1,45 @@
 ---
 import { Image } from 'astro:assets';
+import img1  from '../../assets/icons/calidad.svg'
+import img2  from '../../assets/icons/durabilidad.svg'
+import img3  from '../../assets/icons/comodidad.svg'
+import img4 from '../../assets/icons/simplicidad.svg'
+
+
+const cards = [
+    { title: "Calidad", text: "Algodón grueso de buena resistencia que no se transparenta ni pierde la forma.", img: img1, alt: "Icono de flor de algodón representando la calidad"},
+    { title: "Durabilidad", text: "Costuras reforzadas en cuello y bordes para aguantar lavados sin dañarse.", img: img2, alt: "Icono de cadena representando la durabilidad"},
+    { title: "Comodidad", text: "Cortes anchos (oversize) y caídos en los hombros para moverte con total libertad.", img: img3, alt: "Icono de mano representando la comodidad"},
+    { title: "Simplicidad", text: "Diseños limpios, sin excesos y neutros, fáciles de combinar con todo.", img: img4, alt: "Icono de suéter representando la simplicidad"},
+]
 ---
 
-<section class="flex flex-col lg:gap-6 gap-3 items-center lg:flex-row px-6 py-10" aria-labelledby="hero-title">
-    <div class="lg:w-6/10">
-        <p class="text-[1.3rem] italic">Minimal Form. Maximum Presence.</p>
-        <h1 id="hero-title" class="font-montserrat mt-2 font-bold text-[4rem] leading-16 max-sm:text-7xl text-accent max-w-160">KROMA STUDIO.</h1>
-        <p class="text-[1.35rem] max-w-155 mt-2">Tu marca de ropa urbana enfocada en cortes contemporáneos, prendas unisex, siluetas oversize y una estética visual limpia dirigida a jóvenes creadores, diseñadores y entusiastas de la moda urbana que buscan prendas cómodas y con un diseño moderno.</p>
-        <a class="font-montserrat bg-main text-background block w-fit mt-4 px-8 py-3 rounded-sm md:mt-6 border-4 border-transparent font-bold transition-all duration-300 ease-in-out hover:-translate-y-2 hover:border-main hover:text-main hover:bg-background md:ml-2" 
-        href="/">Ver Características</a>
+<section id="cualidades" class="flex flex-col px-6 py-2 gap-5 lg:gap-6">
+    <div class="w-full lg:mb-1 mb-4">
+        <h2 class="font-montserrat text-accent font-bold text-[clamp(2.6rem,5vw,4.2rem)] leading-16">Cualidades</h2>
+        <p class="text-[1.35rem] mt-1 max-w-180"><span class="italic">Calidad, Durabilidad y Comodidad real</span> para tu uso diario, sin complicaciones nuestra esencia está en la simplicidad.</p>
+    </div>
+    <div class="w-full grid gap-4 md:grid-cols-2 text-background">
+        {
+            cards.map((card) => (
+                <article class="w-full lg:py-0 p-4 max-sm:py-6 bg-main rounded-sm flex gap-2 items-center justify-center">
+                    <div class="w-6/10">
+                        <h3 class="font-montserrat font-bold text-2xl mb-2">{card.title}</h3>
+                        <p class="text-[1.2rem]">{card.text}</p>
+                    </div>
+                    <div class="w-4/10 h-fit">
+                        <Image 
+                            class="w-full h-auto mx-auto max-h-40 object-contain"
+                            src={card.img} 
+                            alt={card.alt} 
+                            width={500} 
+                            height={500} 
+                            draggable="false" 
+                            loading="lazy"
+                        />
+                    </div>
+                </article>
+            ))
+        }
     </div>
 </section>
