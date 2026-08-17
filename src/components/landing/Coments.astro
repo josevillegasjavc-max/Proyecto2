@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+import imgUser  from '../../assets/icons/userIcon.svg'
+
+
+const cards = [
+    { starts: "⭐⭐⭐⭐⭐",nombre: "Villegas",  usuario: "@thevilles_", comment: '"La tela es pesada y abrigada, ideal para el frío. El corte queda tal cual lo esperaba se nota la calidad."'},
+    { starts: "⭐⭐⭐⭐", nombre: "Valeria", usuario: "@valeriastyle", comment: '"Los diseños son muy limpios y combinan con todo. La tela no se deforma ni se pone fea al lavarla."'},
+    { starts: "⭐⭐⭐⭐⭐",nombre: "Gabriel",  usuario: "@gabriel_bqto", comment: '"Estilo urbano puro con costuras muy resistentes. El fit en los hombros tiene una caída perfecta."'},
+]
+---
+
+<section id="opiniones" class="flex flex-col px-6 py-2 lg:py-6 gap-5 lg:gap-6">
+    <div class="w-full lg:mb-1 mb-4">
+        <h2 class="font-montserrat text-accent font-bold text-[clamp(2.6rem,5vw,4.2rem)] leading-16">Opiniones</h2>
+        <p class="text-[1.35rem] mt-1 max-w-200">Lee las opiniones generales de nuestros usuarios que ya han probado la <span class="italic">Calidad, Durabilidad y Comodidad</span> de nuestra marca:</p>
+    </div>
+    <div class="grid gap-6 text-background md:grid-cols-3">
+        {
+            cards.map((card) => (
+                <article class="p-4 bg-main rounded-sm gap-1 flex flex-col justify-between">
+                    <div>
+                        <p class="font-montserrat font-bold text-2xl mb-2">{card.starts}</p>
+                        <p class="text-[1.1rem]">{card.comment}</p>
+                    </div>
+                    <div class="h-fit mt-2 flex gap-4 items-center">
+                        <Image 
+                            class="max-h-12 w-fit object-contain"
+                            src={imgUser} 
+                            alt="Icono de Usuario de personas cabeza y cuerpo circulares" 
+                            width={500} 
+                            height={500} 
+                            draggable="false" 
+                            loading="lazy"
+                        />
+                        <div>
+                            <p class="font-bold text-[1.2rem]">{card.nombre}</p>
+                            <p class="font-bold text-[1.2rem] text-gray-400">{card.usuario}</p>
+                        </div>
+                    </div>
+                </article>
+            ))
+        }
+    </div>
+</section>

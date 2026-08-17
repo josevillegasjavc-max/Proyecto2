@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import img from '../../public/ogImage.png';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
 	title?: string;
@@ -53,8 +54,9 @@ const socialImageURL = new URL(imagePath, Astro.site ?? Astro.url);
 
 	<body class="flex flex-col bg-background text-main font-roboto">
 		<Header/>
-		<main class="flex flex-col gap-10 mx-auto max-w-7xl w-full mt-16 z-0 lg:py-15 py-2">
+		<main class="flex flex-col gap-10 mx-auto max-w-7xl w-full mt-16 z-0 lg:pt-15 pt-2">
 			<slot />
 		</main>
+		<Footer/>
 	</body>
 </html>
