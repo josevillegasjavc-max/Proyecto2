@@ -3,17 +3,17 @@ import { Image } from 'astro:assets'
 import logo from '../assets/images/logo.svg'
 
 const enlaces = [
-    {nombre: "Inicio", href: "/#"},
-    {nombre: "Conocenos", href: "/#conocenos"},
-    {nombre: "Cualidades", href: "/#cualidades"},
-    {nombre: "Opiniones", href: "/#opiniones"},
-    {nombre: "Destacados", href: "/#destacados"}
+    {nombre: "Inicio", href: "./#"},
+    {nombre: "Conocenos", href: "#conocenos"},
+    {nombre: "Cualidades", href: "#cualidades"},
+    {nombre: "Opiniones", href: "#opiniones"},
+    {nombre: "Destacados", href: "#destacados"}
 ]
 
 ---
 <header class="w-full min-h-16 flex text-accent py-1 px-10 fixed top-0 items-center justify-between bg-background z-10 flex-wrap rounded-b-2xl">
     <div class="max-w-7xl w-full mx-auto justify-between flex">
-        <a class="h-12 w-36 my-1 select-none z-30" href="/#" aria-label="Inicio KROMA Studio">
+        <a class="h-12 w-36 my-1 select-none z-30" href="./#" aria-label="Inicio KROMA Studio">
             <Image
             src={logo} 
             alt="KROMA Studio Moda Urbana" 
